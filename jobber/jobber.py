@@ -1,5 +1,6 @@
 import subprocess
 import time
+import sys
 
 
 class JobLauncher(object):
@@ -41,8 +42,11 @@ class JobLauncher(object):
 
 
 class JobClient(object):
-    def __init__(self, client, job):
+    def __init__(self, client, job=None):
         self.client = client
+
+        if not job:
+            job = sys.argv[0]
         self.job = job
         self.resource = client.get(job)
         self.tic = time.time()

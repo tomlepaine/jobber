@@ -12,7 +12,7 @@ The framework has five parts.
 
 ## Workflow
 ### Summary
-- Add jobber.JobClient to your jobs.
+- Add `jobber.JobClient` to your jobs.
 - Make a `launch.yml` file, to list your jobs and desired command.
 - Launch the redis server.
 - Launch the jobs with `launch.py`.
@@ -21,7 +21,7 @@ The framework has five parts.
 ### Details
 Have your jobs talk to the library by giving them the form:
 ```python
-#/path/to/job/one.py
+#/path/to/job1.py
 from redis import Redis
 from jobber import jobber
 
