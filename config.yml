@@ -1,0 +1,11 @@
+command: 'THEANO_FLAGS="floatX=float32,device={resource},nvcc.fastmath=True" python -u {job} &'
+jobs:
+  - job1/exp.py
+  - job2/exp.py
+  - job3/exp.py
+  - job4/exp.py
+  - job5/exp.py
+  - job6/exp.py
+resources:
+  - gpu0
+  - gpu1
