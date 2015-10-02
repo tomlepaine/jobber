@@ -1,18 +1,5 @@
 import subprocess
-import argparse
 import time
-
-from redis import Redis
-import yaml
-
-parser = argparse.ArgumentParser(prog='Jobber',
-                                 description='Utily to launch jobs.')
-
-parser.add_argument('--path',
-                    type=str,
-                    help='Path for yml file.')
-
-args = parser.parse_args()
 
 
 class JobLauncher(object):
@@ -103,22 +90,3 @@ class JobProgress(object):
         self._print(self.todo())
         print '-- Done --'
         self._print_dict(self.times())
-
-if __name__ == '__main__':
-
-    client = Redis()
-
-    path = args.path
-
-    with open(path, 'r') as f:
-        config = yaml.load(f)
-
-    launcher = JobLauncher(client=client,
-                           cmd=config['command'])
-
-    launcher.add(config['jobs'])
-    launcher.add_resources(config['resources'])
-
-    launcher.run()
-
-    launcher.done()

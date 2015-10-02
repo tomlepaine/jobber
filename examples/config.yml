@@ -1,4 +1,5 @@
 command: 'THEANO_FLAGS="floatX=float32,device={resource},nvcc.fastmath=True" python -u {job} &'
+root: '/media/hd2/hd1/code/frame-diff/experiments/job-test/'
 jobs:
   - job1/exp.py
   - job2/exp.py
