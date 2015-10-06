@@ -1,7 +1,9 @@
 # jobber
 Python utility for scheduling many jobs to run in sequence.
 
-The library relies on redis and yaml.
+Dependences:
+- redis
+- yaml
 
 The framework has five parts.
 - A redis server through which everything communicates.
